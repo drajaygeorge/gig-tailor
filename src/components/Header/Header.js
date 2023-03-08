@@ -10,7 +10,13 @@ import Brightness7Icon from '@material-ui/icons/Brightness7';
 const HeaderWrapper = styled(AppBar)(({ theme }) => ({
   background: theme.palette.background.default,
   color: theme.palette.text.primary,
+  boxShadow: 'none',
   transition: 'background 0.3s ease-in-out, color 0.3s ease-in-out',
+}));
+
+const BodyWrapper = styled('div')(({ theme }) => ({
+  background: theme.palette.background.default,
+  minHeight: '100vh',
 }));
 
 const Header = ({ toggleTheme, themeMode }) => {
