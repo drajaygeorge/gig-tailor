@@ -17,20 +17,27 @@ const HeaderWrapper = styled(AppBar)(({ theme }) => ({
 const BodyWrapper = styled('div')(({ theme }) => ({
   background: theme.palette.background.default,
   minHeight: '100vh',
+  padding: theme.spacing(3),
+  marginTop: theme.mixins.toolbar.minHeight,
 }));
 
 const Header = ({ toggleTheme, themeMode }) => {
   return (
-    <HeaderWrapper position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My App
-        </Typography>
-        <IconButton onClick={toggleTheme} color="inherit">
-          {themeMode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
-        </IconButton>
-      </Toolbar>
-    </HeaderWrapper>
+    <>
+      <HeaderWrapper position="static">
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            My App
+          </Typography>
+          <IconButton onClick={toggleTheme} color="inherit">
+            {themeMode === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
+          </IconButton>
+        </Toolbar>
+      </HeaderWrapper>
+      <BodyWrapper>
+        {/* Your content here */}
+      </BodyWrapper>
+    </>
   );
 };
 

@@ -9,15 +9,14 @@ import {
 } from '@material-ui/core';
 import { styled } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
-
-const BodyWrapper = styled('div')(({ theme }) => ({
-  background: theme.palette.background.default,
-  minHeight: '100vh',
-}));
+import Header from './components/Header/Header';
+import BodyWrapper from './components/BodyWrapper/BodyWrapper'; // Import BodyWrapper component here
 
 const LandingPageWrapper = styled('div')(({ theme }) => ({
+  background: theme.palette.background.default,
   color: theme.palette.text.primary,
   transition: 'background 0.3s ease-in-out, color 0.3s ease-in-out',
+  height: '100vh',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -38,6 +37,7 @@ function LandingPage({ toggleTheme, theme }) {
 
   return (
     <ThemeProvider theme={theme}>
+      <Header toggleTheme={toggleTheme} themeMode={theme.mode} />
       <BodyWrapper>
         <LandingPageWrapper>
           <h1>Welcome to our Resume Builder and Cover Letter Generator</h1>
