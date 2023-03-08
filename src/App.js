@@ -1,8 +1,10 @@
 import './App.css';
+import LandingPage from './LandingPage';
 
 function App() {
   return (
     <div className="App">
+      {/* Commented out the header section
       <header className="App-header">
         <img src="Octocat.png" className="App-logo" alt="logo" />
         <p>
@@ -22,6 +24,8 @@ function App() {
           </a>
         </p>
       </header>
+      */}
+      <LandingPage />
     </div>
   );
 }
