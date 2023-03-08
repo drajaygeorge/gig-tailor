@@ -1,5 +1,6 @@
 import './App.css';
 import LandingPage from './LandingPage';
+import Header from './components/Header';
 
 function App() {
   return (
