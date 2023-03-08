@@ -14,6 +14,11 @@ const LandingPageWrapper = styled('div')(({ theme }) => ({
   background: theme.palette.background.default,
   color: theme.palette.text.primary,
   transition: 'background 0.3s ease-in-out, color 0.3s ease-in-out',
+  height: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
 }));
 
 function LandingPage({ toggleTheme, theme }) {
