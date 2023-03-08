@@ -1,33 +1,27 @@
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header/Header';
 import LandingPage from './LandingPage';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function App() {
+const App = () => {
+  const [themeMode, setThemeMode] = useState('light');
+
+  const toggleTheme = () => {
+    setThemeMode(themeMode === 'light' ? 'dark' : 'light');
+  };
+
+  const theme = createTheme({
+    palette: {
+      mode: themeMode,
+    },
+  });
+
   return (
-    <div className="App">
-      {/* Commented out the old header section
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-      */}
+    <ThemeProvider theme={theme}>
+      <Header toggleTheme={toggleTheme} />
       <LandingPage />
-    </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

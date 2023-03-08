@@ -7,8 +7,7 @@ import {
   FormControlLabel,
   RadioGroup,
 } from '@material-ui/core';
-import Header from './components/Header/Header';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 const LandingPageWrapper = styled('div')(({ theme }) => ({
   background: theme.palette.background.default,
@@ -18,7 +17,6 @@ const LandingPageWrapper = styled('div')(({ theme }) => ({
 
 function LandingPage() {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [themeMode, setThemeMode] = useState('light');
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -28,20 +26,6 @@ function LandingPage() {
     event.preventDefault();
     // Handle form submission
   };
-
-  const toggleTheme = () => {
-    if (themeMode === 'light') {
-      setThemeMode('dark');
-    } else {
-      setThemeMode('light');
-    }
-  };
-
-  const theme = createTheme({
-    palette: {
-      mode: themeMode,
-    },
-  });
 
   return (
     <ThemeProvider theme={theme}>
