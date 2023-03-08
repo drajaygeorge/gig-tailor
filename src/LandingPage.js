@@ -8,6 +8,7 @@ import {
   RadioGroup,
 } from '@material-ui/core';
 import { styled } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
 const LandingPageWrapper = styled('div')(({ theme }) => ({
   background: theme.palette.background.default,
@@ -15,7 +16,7 @@ const LandingPageWrapper = styled('div')(({ theme }) => ({
   transition: 'background 0.3s ease-in-out, color 0.3s ease-in-out',
 }));
 
-function LandingPage() {
+function LandingPage({ toggleTheme, theme }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleOptionClick = (option) => {
@@ -30,7 +31,6 @@ function LandingPage() {
   return (
     <ThemeProvider theme={theme}>
       <LandingPageWrapper>
-        <Header toggleTheme={toggleTheme} />
         <h1>Welcome to our Resume Builder and Cover Letter Generator</h1>
         <div className="buttons">
           <Button
