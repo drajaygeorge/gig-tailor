@@ -1,11 +1,10 @@
 import './App.css';
 import LandingPage from './LandingPage';
-import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      {/* Commented out the header section
+      {/* Commented out the old header section
       <header className="App-header">
         <img src="Octocat.png" className="App-logo" alt="logo" />
         <p>

@@ -7,6 +7,7 @@ import {
   FormControlLabel,
   RadioGroup,
 } from '@material-ui/core';
+import Header from './components/Header/Header';
 
 function LandingPage() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -22,6 +23,7 @@ function LandingPage() {
 
   return (
     <div className="LandingPage">
+      <Header />
       <h1>Welcome to our Resume Builder and Cover Letter Generator</h1>
       <div className="buttons">
         <Button
